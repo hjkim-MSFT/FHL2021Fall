@@ -1,1 +1,20 @@
-// Empty VBA module
+Attribute VB_Name = "Module1"
+Function MonteCarloResult()
+    Dim modelRange As Range
+    Dim modelResultRange As Range
+    Dim iRun As Long
+    Dim modelResult As Double
+    Application.ScreenUpdating = False
+    Application.Calculation = xlCalculationManual
+    Set modelRange = Range("ModelRange")
+    Set modelResultRange = Range("ModelResultRange")
+    modelResult = 0
+    For iRun = 1 To 1000
+        modelRange.Calculate
+        modelResult = modelResult + modelResultRange.Value / 1000#
+    Next iRun
+    Application.Calculation = xlCalculationAutomatic
+    Application.ScreenUpdating = True
+    MonteCarloResult = modelResult
+End Function
+
