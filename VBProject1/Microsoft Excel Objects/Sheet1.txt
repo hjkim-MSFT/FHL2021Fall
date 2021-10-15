@@ -7,6 +7,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
-Sub TestSheet1()
-    MsgBox "Hello! Sheet1."
+Private Sub cmdMonteCarlo_Click()
+    Dim finalResultRange As Range
+    Set finalResultResultRange = Range("FinalResultRange")
+    finalResultResultRange.Value = MonteCarloResult
 End Sub
