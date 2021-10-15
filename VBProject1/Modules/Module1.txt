@@ -11,7 +11,7 @@ Function MonteCarloResult()
     modelResult = 0
     For iRun = 1 To 1000
         modelRange.Calculate
-        modelResult = modelResult + modelResultRange.Value / 2000#
+        modelResult = modelResult + modelResultRange.Value / 1000#
     Next iRun
     Application.Calculation = xlCalculationAutomatic
     Application.ScreenUpdating = True
